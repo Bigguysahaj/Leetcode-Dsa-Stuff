@@ -11,16 +11,14 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        ListNode* slow=head;
-        ListNode* fast=head;
-        while( fast!=NULL && fast->next!=NULL){
-            slow=slow->next;
-            fast=fast->next->next;
+        ListNode* h1=head;
+        ListNode* h2=head;
+        while( h2!=NULL && h2->next!=NULL){
+            h1=h1->next;
+            h2=h2->next->next;
         }
         
-//         when fast breaks (i.e hits NULL), the slow is expected to stop at middle of the linked 
-//          list
-        return slow;
+        return h1;
         
     }
 };
