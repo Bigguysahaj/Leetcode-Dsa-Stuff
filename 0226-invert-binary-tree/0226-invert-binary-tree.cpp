@@ -12,12 +12,11 @@
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        if(root==NULL){
-            return root;
-        }
-        TreeNode * left = invertTree(root->left);
-        TreeNode * right = invertTree(root->right);
+        if(!root)
+        {return NULL;}
         
+        invertTree(root->left);
+        invertTree(root->right);
         swap(root->left,root->right);
         
         return root;
